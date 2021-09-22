@@ -86,9 +86,13 @@ WHERE
 -- Aggregate functions:
 VAR_POP() -- variance
 STDDEV_POP() -- Population std dev
+STDDEV_SAMP() -- Sample std dev
 MIN()
 MAX()
 SUM()
 ROUND(colname, 2) -- same as Python
+
+--Correlation 
+CORR(x, y) -- Correlation coefficient
 
  
