@@ -95,4 +95,7 @@ ROUND(colname, 2) -- same as Python
 --Correlation 
 CORR(x, y) -- Correlation coefficient
 
- 
+-- Select all distinct pet names from two tables with the same column name in one row with UNION:
+SELECT DISTINCT name FROM cats
+UNION 
+SELECT DISTINCT name FROM dogs;
