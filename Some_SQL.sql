@@ -90,6 +90,7 @@ STDDEV_SAMP() -- Sample std dev
 MIN()
 MAX()
 SUM()
+AVG() --mean
 ROUND(colname, 2) -- same as Python
 
 --Correlation 
@@ -99,3 +100,11 @@ CORR(x, y) -- Correlation coefficient
 SELECT DISTINCT name FROM cats
 UNION 
 SELECT DISTINCT name FROM dogs;
+
+--Write a query that selects only the names of employees who are not managers (managerId can contain nulls).
+SELECT name FROM employees WHERE Id NOT IN(
+  SELECT managerId FROM employees WHERE managerId NOT NULL);
+  
+--Write a query that selects userId and average session duration for each user who has more than one session  
+SELECT userId, AVG(duration) FROM sessions
+  GROUP BY userId HAVING COUNT() >1;  
