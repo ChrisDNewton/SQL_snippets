@@ -108,3 +108,14 @@ SELECT name FROM employees WHERE Id NOT IN(
 --Write a query that selects userId and average session duration for each user who has more than one session  
 SELECT userId, AVG(duration) FROM sessions
   GROUP BY userId HAVING COUNT() >1;  
+
+
+--Return the 6th highest paid employee using a subquery
+SELECT * from (
+	SELECT * FROM employees
+	ORDER BY salary DESC
+	LIMIT 6
+	) 
+AS top6
+ORDER BY salary ASC
+LIMIT 1;
