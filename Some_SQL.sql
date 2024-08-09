@@ -53,11 +53,11 @@ GROUP BY
 -- Basic join with filter
 SELECT 
     e.last_name,
-	e.email,
-	e.start_date,
-	e.salary,
-	cr.region_name, 
-	cr.country_name
+    e.email,
+    e.start_date,
+    e.salary,
+    cr.region_name, 
+    cr.country_name
 FROM
     data_sci.employees e
 JOIN
@@ -119,3 +119,11 @@ SELECT * from (
 AS top6
 ORDER BY salary ASC
 LIMIT 1;
+
+
+--SSMS specific functions------------------------------------------------------------------------------------
+--Get today's date
+GETDATE()
+
+--Calculate difference in days between a date and today
+DATEDIFF(day, some_date_column, GETDATE()) [difference_in_days]
