@@ -127,3 +127,11 @@ GETDATE()
 
 --Calculate difference in days between a date and today
 DATEDIFF(day, some_date_column, GETDATE()) [difference_in_days]
+
+--Select rows where a date is within the last 2 weeks
+SELECT date_col, 
+       columns_you_want  
+FROM some_table
+-- select everything in the last 14 days
+WHERE some_table.date_col >= DATEADD(DAY, -14, CONVERT(DATE, GETDATE()))
+ORDER BY some_table.date_col DESC
